@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navgraph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/likedFragment"
+        android:name="com.satwik.noteit.view.fragments.LikedFragment"
+        android:label="fragment_liked"
+        tools:layout="@layout/fragment_liked" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.satwik.noteit.view.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.satwik.noteit.view.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/trashFragment"
+        android:name="com.satwik.noteit.view.fragments.TrashFragment"
+        android:label="fragment_trash"
+        tools:layout="@layout/fragment_trash" />
+</navigation>

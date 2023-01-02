@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:backgroundTint="@color/secondary_greyblue"
+    app:cardCornerRadius="5dp"
+    android:background="@color/white"
+    app:cardElevation="10dp">
+
+    <TextView
+        android:id="@+id/largeCard_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:fontFamily="@font/manrope_bold"
+        android:text="Title"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/largeCard_Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
+        android:ellipsize="end"
+        android:maxLines="9"
+        android:fontFamily="@font/manrope_light"
+        android:text="Content"
+        android:textColor="#80FFFFFF"
+        android:textSize="13sp" />
+
+</androidx.cardview.widget.CardView>

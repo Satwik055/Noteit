@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottomnav_home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/likedFragment"
+        android:icon="@drawable/heart"
+        android:title="Liked"/>
+
+    <item
+        android:id="@+id/placeholder"
+        android:icon="@drawable/ic_baseline_placeholder"
+        android:title=""/>
+
+    <item
+        android:id="@+id/trashFragment"
+        android:icon="@drawable/ic_bottomnav_trash"
+        android:title="Trash"/>
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_bottmnav_settings"
+        android:title="Settings"/>
+
+</menu>
