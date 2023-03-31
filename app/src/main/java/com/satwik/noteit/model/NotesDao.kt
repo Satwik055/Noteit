@@ -1,11 +1,7 @@
 package com.satwik.noteit.model
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy.REPLACE
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface NotesDao {
@@ -13,7 +9,7 @@ interface NotesDao {
     @Query("SELECT * FROM Notes")
     fun getNote(): LiveData<List<NotesEntity>>
 
-    @Insert(onConflict = REPLACE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertNotes(notes: NotesEntity)
 
     @Query("DELETE FROM Notes WHERE notes_id=:id")

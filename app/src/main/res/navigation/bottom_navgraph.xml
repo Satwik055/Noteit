@@ -5,23 +5,36 @@
     android:id="@+id/bottom_navgraph"
     app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/likedFragment"
-        android:name="com.satwik.noteit.view.fragments.LikedFragment"
-        android:label="fragment_liked"
-        tools:layout="@layout/fragment_liked" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.satwik.noteit.view.fragments.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
-    <fragment
         android:id="@+id/homeFragment"
         android:name="com.satwik.noteit.view.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createNoteFragment"
+            app:destination="@id/createNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewNoteFragment"
+            app:destination="@id/viewNoteFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/trashFragment"
-        android:name="com.satwik.noteit.view.fragments.TrashFragment"
-        android:label="fragment_trash"
-        tools:layout="@layout/fragment_trash" />
+        android:id="@+id/createNoteFragment"
+        android:name="com.satwik.noteit.view.fragments.CreateNoteFragment"
+        android:label="CreateNoteFragment"
+        tools:layout="@layout/fragment_create_note">
+        <action
+            android:id="@+id/action_createNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewNoteFragment"
+        android:name="com.satwik.noteit.view.fragments.ViewNoteFragment"
+        tools:layout="@layout/fragment_view_note"
+        android:label="ViewNoteFragment">
+        <argument
+            android:name="data"
+            app:argType="com.satwik.noteit.model.NotesEntity" />
+        <action
+            android:id="@+id/action_viewNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
