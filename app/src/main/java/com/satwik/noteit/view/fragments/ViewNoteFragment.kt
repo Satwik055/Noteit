@@ -11,13 +11,12 @@ import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentViewNoteBinding
 
 class ViewNoteFragment : Fragment() {
-    lateinit var binding: FragmentViewNoteBinding
+    private lateinit var binding: FragmentViewNoteBinding
     private val notes by navArgs<ViewNoteFragmentArgs>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
+            View {
         binding = FragmentViewNoteBinding.inflate(layoutInflater, container, false)
 
         //Setting up the textview with the parsed data
@@ -29,7 +28,11 @@ class ViewNoteFragment : Fragment() {
             findNavController().navigate(R.id.action_viewNoteFragment_to_homeFragment)
         }
 
+        //EditNote Button
+        binding.btnEditnotes.setOnClickListener {
+          findNavController().navigate(R.id.action_viewNoteFragment_to_editNoteFragment)
 
+        }
 
         return binding.root
     }

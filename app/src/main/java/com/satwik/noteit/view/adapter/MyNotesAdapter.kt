@@ -3,12 +3,8 @@ package com.satwik.noteit.view.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.satwik.noteit.R
-import com.satwik.noteit.databinding.CardlayoutLargeBinding
 import com.satwik.noteit.databinding.LargecardviewBinding
 import com.satwik.noteit.model.NotesEntity
 import com.satwik.noteit.view.fragments.HomeFragmentDirections
@@ -36,7 +32,7 @@ class MyNotesAdapter(val requireContext: Context, private val notesList: List<No
         }
 
         holder.binding.root.setOnClickListener{
-            Navigation.findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToViewNoteFragment(data))
+            findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToViewNoteFragment(data))
         }
 
     }

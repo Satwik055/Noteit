@@ -36,23 +36,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+   <com.google.android.material.search.SearchBar
+    android:id="@+id/searchView"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView"
+    android:hint="Search your notes here"
+    android:textAppearance="@style/SearchBarText"
+    app:navigationIcon="@drawable/ic_searchbar_icon"
+    android:backgroundTint="@color/white10">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/searchbar"
-        app:iconifiedByDefault="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:queryBackground="@null"
-        app:queryHint="Search your notes"
-        app:searchIcon="@drawable/ic_searchbar_icon"
-        app:submitBackground="@null" />
+</com.google.android.material.search.SearchBar>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

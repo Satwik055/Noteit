@@ -11,4 +11,11 @@
         <item name="cornerSize">50%</item>
         <item name="cornerFamily">rounded</item>
     </style>
+
+    <style name="SearchBarText" parent="TextAppearance.Material3.SearchBar">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:textColorHint">@color/white50</item>
+    </style>
+
+
 </resources>
