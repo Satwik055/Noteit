@@ -32,7 +32,8 @@ class MyNotesAdapter(val requireContext: Context, private val notesList: List<No
         }
 
         holder.binding.root.setOnClickListener{
-            findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToViewNoteFragment(data))
+            val action = HomeFragmentDirections.actionHomeFragmentToViewNoteFragment(data)
+            findNavController(it).navigate(action)
         }
 
     }

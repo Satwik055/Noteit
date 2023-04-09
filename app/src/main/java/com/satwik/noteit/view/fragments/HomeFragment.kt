@@ -15,7 +15,7 @@ import com.satwik.noteit.view.adapter.MyNotesAdapter
 import com.satwik.noteit.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
-    lateinit var binding:FragmentHomeBinding
+    private lateinit var binding:FragmentHomeBinding
     private val mainViewModel:MainViewModel by viewModels()
 
     override fun onCreateView(
