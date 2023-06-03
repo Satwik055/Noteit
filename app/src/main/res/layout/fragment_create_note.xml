@@ -26,7 +26,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_counter" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_counter"
+        android:textCursorDrawable="@drawable/color_cursor"/>
 
     <EditText
         android:id="@+id/editText_heading"
@@ -44,7 +45,8 @@
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textCursorDrawable="@drawable/color_cursor"/>
 
     <TextView
         android:id="@+id/textView_counter"
