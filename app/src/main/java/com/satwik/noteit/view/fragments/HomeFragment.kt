@@ -1,6 +1,8 @@
 package com.satwik.noteit.view.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +13,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentHomeBinding
+import com.satwik.noteit.model.NotesEntity
 import com.satwik.noteit.view.adapter.MyNotesAdapter
 import com.satwik.noteit.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
     private lateinit var binding:FragmentHomeBinding
     private val mainViewModel:MainViewModel by viewModels()
+    private var oldMyNotes = arrayListOf<NotesEntity>()
+    lateinit var adapter:MyNotesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,20 +36,43 @@ class HomeFragment : Fragment() {
 
         //Setting up Recycler View
         mainViewModel.getNote().observe(viewLifecycleOwner) { notesList ->
+            oldMyNotes = notesList as ArrayList<NotesEntity>
             binding.myNotesRecyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayout.VERTICAL)
-                binding.myNotesRecyclerView.adapter = MyNotesAdapter(requireContext(), notesList)
+            adapter =  MyNotesAdapter(requireContext(), notesList)
+            binding.myNotesRecyclerView.adapter = adapter
 
 
         }
+
+        //Searchbar
+        binding.editTextSearch.addTextChangedListener(object :TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                //pass
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Pass
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                notesFiltering(s)
+            }
+        })
 
 
 
         return binding.root
     }
 
-
-
-
+    private fun notesFiltering(s:CharSequence?) {
+        val newFilteredList = arrayListOf<NotesEntity>()
+        for (i in oldMyNotes){
+            if(i.title.contains(s.toString()) || i.content.contains(s.toString())) {
+                newFilteredList.add(i)
+            }
+        }
+        adapter.filtering(newFilteredList)
+    }
 
 
 }

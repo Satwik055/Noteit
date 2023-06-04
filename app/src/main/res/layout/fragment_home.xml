@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homefragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_background"
-    tools:context=".HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:background="@color/primary_background">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myNotesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:fadingEdge="vertical"
         android:fadingEdgeLength="10dp"
         android:paddingStart="16dp"
-        android:layout_marginTop="16dp"
         android:requiresFadingEdge="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -36,22 +36,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-   <com.google.android.material.search.SearchBar
-    android:id="@+id/searchView"
-    android:layout_width="match_parent"
-    android:layout_height="45dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="16dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView"
-    android:hint="Search your notes here"
-    android:textAppearance="@style/SearchBarText"
-    app:navigationIcon="@drawable/ic_searchbar_icon"
-    android:backgroundTint="@color/white10">
-
-</com.google.android.material.search.SearchBar>
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/searchbar_bg"
+        android:drawableStart="@drawable/ic_searchbar_icon"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/manrope"
+        android:textSize="15sp"
+        android:hint="Search your notes"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -67,14 +71,12 @@
         app:elevation="15dp"
         app:fabCustomSize="65dp"
         app:layout_anchorGravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/myNotesRecyclerView"
-        app:layout_constraintEnd_toEndOf="@+id/myNotesRecyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="33dp"
         app:srcCompat="@drawable/ic_fab_icon"
         app:tint="@color/white"
         tools:ignore="ContentDescription" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

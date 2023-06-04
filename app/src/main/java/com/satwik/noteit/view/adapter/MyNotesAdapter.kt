@@ -9,7 +9,12 @@ import com.satwik.noteit.databinding.LargecardviewBinding
 import com.satwik.noteit.model.NotesEntity
 import com.satwik.noteit.view.fragments.HomeFragmentDirections
 
-class MyNotesAdapter(val requireContext: Context, private val notesList: List<NotesEntity>) :RecyclerView.Adapter<MyNotesAdapter.MynotesViewholder>() {
+class MyNotesAdapter(val requireContext: Context, private var notesList: List<NotesEntity>) :RecyclerView.Adapter<MyNotesAdapter.MynotesViewholder>() {
+
+    fun filtering(newFilteredList: ArrayList<NotesEntity>) {
+        notesList = newFilteredList
+        notifyDataSetChanged()
+    }
     class MynotesViewholder(val binding:LargecardviewBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
