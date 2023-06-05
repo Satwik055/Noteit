@@ -9,8 +9,7 @@
     android:backgroundTint="@color/secondary_greyblue"
     app:cardCornerRadius="16dp"
     app:contentPadding="13dp"
-    android:background="@color/white"
-    app:cardElevation="5dp">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/largeCard_title"

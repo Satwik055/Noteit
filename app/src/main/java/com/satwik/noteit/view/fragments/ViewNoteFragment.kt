@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentViewNoteBinding
 import com.satwik.noteit.viewmodel.MainViewModel
@@ -16,6 +18,7 @@ class ViewNoteFragment : Fragment() {
     private lateinit var binding: FragmentViewNoteBinding
     private val notes by navArgs<ViewNoteFragmentArgs>()
     private val mainViewModel: MainViewModel by viewModels()
+
 
 
     override fun onCreateView(
@@ -35,14 +38,35 @@ class ViewNoteFragment : Fragment() {
         binding.btnEditnotes.setOnClickListener {
             val action = ViewNoteFragmentDirections.actionViewNoteFragmentToEditNoteFragment(notes.data)
             findNavController().navigate(action)
+
         }
 
         //Move-To-Trash Button
         binding.btnMvToTrash.setOnClickListener {
-            mainViewModel.deleteNotes(notes.data.id!!)
-            findNavController().navigate(R.id.action_viewNoteFragment_to_homeFragment)
+            bottomSheetDialog()
         }
 
         return binding.root
+    }
+
+    private fun bottomSheetDialog() {
+        val dialog = BottomSheetDialog(requireContext())
+        dialog.setContentView(R.layout.fragment_bottom_sheet)
+        dialog.show()
+
+        val btnDelete = dialog.findViewById<Button>(R.id.btn_bottomfrag_delete)
+        val btnCancel = dialog.findViewById<Button>(R.id.btn_bottomfrag_cancel)
+
+        //Delete Button
+        btnDelete?.setOnClickListener {
+            mainViewModel.deleteNotes(notes.data.id!!)
+            dialog.hide()
+            findNavController().navigate(R.id.action_viewNoteFragment_to_homeFragment)
+        }
+
+        //Cancel Button
+        btnCancel?.setOnClickListener {
+            dialog.hide()
+        }
     }
 }
