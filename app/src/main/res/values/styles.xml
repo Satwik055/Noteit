@@ -7,4 +7,15 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/primary_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>
+    </style>
+
+    <style name="CustomOverflowButton" >
+        <item name="android:src">@drawable/ic_btn_menu</item>
+
+    </style>
 </resources>

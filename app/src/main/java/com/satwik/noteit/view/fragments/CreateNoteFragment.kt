@@ -15,42 +15,58 @@ import com.satwik.noteit.utils.KeyboardUtil
 import com.satwik.noteit.viewmodel.MainViewModel
 
 class CreateNoteFragment : Fragment() {
-    lateinit var binding: FragmentCreateNoteBinding
+    private lateinit var binding: FragmentCreateNoteBinding
     private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?):
+            View { binding = FragmentCreateNoteBinding.inflate(layoutInflater, container, false)
 
-    ): View {
-        binding = FragmentCreateNoteBinding.inflate(layoutInflater, container, false)
+//--------------------------------------------Toolbar--------------------------------------------------//
+        binding.toolbarCreatenote.setOnMenuItemClickListener {
+            when (it.itemId) {
 
-        //Back button
-        binding.btnback.setOnClickListener{
-            findNavController().navigate(R.id.action_createNoteFragment_to_homeFragment)
+                //Confirm Button
+                R.id.createnote_toolbar_options_confirm -> {
+                    saveNewNote()
+                    true
+                }
 
-        }
-
-        //SaveButton
-        binding.saveButton.setOnClickListener{
-            if (binding.editTextContent.text.toString().isEmpty()){
-                Toast.makeText(activity, "Note content is empty", Toast.LENGTH_SHORT).show()
-
-            }
-            else{
-                val title = binding.editTextHeading.text.toString()
-                val content = binding.editTextContent.text.toString()
-                val data = NotesEntity(null, title, content)
-                mainViewModel.insertNotes(data)
-                findNavController().navigate(R.id.action_createNoteFragment_to_homeFragment)
+                //Default
+                else -> { true }
             }
         }
+
+        //Navigation Button (Back Button)
+        binding.toolbarCreatenote.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+//---------------------------------------------------------------------------------------------------//
+
 
         return binding.root
     }
+
+//------------------------Functions----------------------------//
+    private fun saveNewNote() {
+        if (binding.editTextContent.text.toString().isEmpty()) {
+            Toast.makeText(activity, "Note content is empty", Toast.LENGTH_SHORT).show()
+
+        } else {
+            val title = binding.editTextHeading.text.toString()
+            val content = binding.editTextContent.text.toString()
+            val data = NotesEntity(null, title, content)
+            mainViewModel.insertNotes(data)
+            findNavController().popBackStack()
+        }
+    }
+
     //Opening keyboard as user enters in EditNoteFragment
     override fun onStart() {
         super.onStart()
         KeyboardUtil.showSoftKeyboard(binding.editTextHeading)
     }
+//-----------------------------------------------------------//
+
 }

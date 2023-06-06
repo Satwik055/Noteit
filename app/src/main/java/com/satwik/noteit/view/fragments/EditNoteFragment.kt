@@ -20,13 +20,8 @@ class EditNoteFragment : Fragment() {
     private val notes by navArgs<EditNoteFragmentArgs>()
     private val mainViewModel: MainViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ):
-            View {
-        binding = FragmentEditNoteBinding.inflate(layoutInflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
+            View { binding = FragmentEditNoteBinding.inflate(layoutInflater, container, false)
 
         //EditText
         binding.editTextHeading.text =
@@ -34,29 +29,45 @@ class EditNoteFragment : Fragment() {
         binding.editTextContent.text =
             Editable.Factory.getInstance().newEditable(notes.editableData.content)
 
-        //BackButton
-        binding.btnback.setOnClickListener {
-            findNavController().navigate(R.id.action_editNoteFragment_to_homeFragment)
+//--------------------------------------------Toolbar--------------------------------------------------//
+        binding.toolbarEditnote.setOnMenuItemClickListener {
+            when (it.itemId) {
+
+                //Confirm Button
+                R.id.editnote_toolbar_options_confirm -> {
+                    saveEditedNote()
+                    true
+                }
+
+                //Default
+                else -> {true}
+            }
         }
 
-        //SaveButton
-        binding.btnSave.setOnClickListener {
-            val title = binding.editTextHeading.text.toString()
-            val content = binding.editTextContent.text.toString()
-            val id = notes.editableData.id
-            val editedData = NotesEntity(id, title, content)
-            mainViewModel.updateNotes(editedData)
-            findNavController().navigate(R.id.action_editNoteFragment_to_homeFragment)
+        //Navigation Button (Back Button)
+        binding.toolbarEditnote.setNavigationOnClickListener {
+            findNavController().popBackStack()
         }
+//-----------------------------------------------------------------------------------------------------//
 
         return binding.root
     }
 
-    //Opening keyboard as user enters in EditNoteFragment
+//------------------------Functions----------------------------//
+    private fun saveEditedNote() {
+        val title = binding.editTextHeading.text.toString()
+        val content = binding.editTextContent.text.toString()
+        val id = notes.editableData.id
+        val editedData = NotesEntity(id, title, content)
+        mainViewModel.updateNotes(editedData)
+        findNavController().navigate(R.id.action_editNoteFragment_to_homeFragment)
+    }
+
+    //Opens keyboard as user enters in EditNoteFragment
     override fun onStart() {
         super.onStart()
         KeyboardUtil.showSoftKeyboard(binding.editTextContent)
     }
-
+//------------------------------------------------------------//
 }
 

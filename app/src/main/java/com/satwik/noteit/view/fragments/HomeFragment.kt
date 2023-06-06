@@ -25,9 +25,8 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        savedInstanceState: Bundle?):
+            View { binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
         //FAB listener
         binding.floatingActionButton.setOnClickListener{
