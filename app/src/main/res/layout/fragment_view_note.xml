@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_background"
-    tools:context=".view.activities.CreateActivity">
+    android:background="@color/primary_background">
 
 
     <TextView
@@ -13,7 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="49dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/transparent"
@@ -23,10 +21,11 @@
         android:textColor="@color/white"
         android:textColorHint="#777777"
         android:textSize="@dimen/note_content"
+        android:layout_marginTop="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_counter" />
+        app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
 
     <TextView
         android:id="@+id/editText_heading"
@@ -46,19 +45,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_counter"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/manrope_medium"
-        android:text="Sun, 10:30 | 0 Characters "
-        android:textColor="#747474"
-        android:textSize="15sp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_heading" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_heading">
+
+        <TextView
+            android:id="@+id/textView_dateandtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_medium"
+            android:text="Sun, 10:30  |  "
+            android:textColor="#747474"
+            android:gravity="start"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_medium"
+            android:text="0 Characters "
+            android:gravity="start"
+            android:textColor="#747474"
+            android:textSize="15sp" />
+    </LinearLayout>
 
 
     <androidx.appcompat.widget.Toolbar

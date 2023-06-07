@@ -1,6 +1,8 @@
 package com.satwik.noteit.view.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +46,23 @@ class CreateNoteFragment : Fragment() {
         }
 //---------------------------------------------------------------------------------------------------//
 
+
+
+        //Live Character Counter
+        binding.editTextContent.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                //pass
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Pass
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                var characterCount = binding.editTextContent.text.length.toString()
+                binding.textViewCounter.text = "$characterCount Characters"
+            }
+        })
 
         return binding.root
     }

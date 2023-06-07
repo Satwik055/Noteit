@@ -2,9 +2,11 @@ package com.satwik.noteit.view.fragments
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -50,10 +52,32 @@ class EditNoteFragment : Fragment() {
         }
 //-----------------------------------------------------------------------------------------------------//
 
+        //Setting up initial character count
+        var characterCount = binding.editTextContent.text.length.toString()
+        binding.textViewCounter.text = "$characterCount Characters"
+
+        //Live Character counter
+        binding.editTextContent.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                //pass
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.textViewCounter.text = binding.editTextContent.text.length.toString()
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                var characterCount = binding.editTextContent.text.length.toString()
+                binding.textViewCounter.text = "$characterCount Characters"
+            }
+        })
+
+
+
         return binding.root
     }
 
-//------------------------Functions----------------------------//
+
     private fun saveEditedNote() {
         val title = binding.editTextHeading.text.toString()
         val content = binding.editTextContent.text.toString()
@@ -68,6 +92,6 @@ class EditNoteFragment : Fragment() {
         super.onStart()
         KeyboardUtil.showSoftKeyboard(binding.editTextContent)
     }
-//------------------------------------------------------------//
+
 }
 

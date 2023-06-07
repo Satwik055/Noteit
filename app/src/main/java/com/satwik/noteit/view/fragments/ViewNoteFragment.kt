@@ -69,6 +69,11 @@ class ViewNoteFragment : Fragment() {
         }
 //----------------------------------------------------------------------------------------------------//
 
+        //Character counter
+        var characterCount = binding.editTextContent.text.length.toString()
+        binding.textViewCounter.text = "$characterCount Characters"
+
+
 
         return binding.root
     }
