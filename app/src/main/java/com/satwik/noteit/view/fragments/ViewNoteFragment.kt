@@ -14,6 +14,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentViewNoteBinding
+import com.satwik.noteit.utils.CalendarUtil
 import com.satwik.noteit.viewmodel.MainViewModel
 
 class ViewNoteFragment : Fragment() {
@@ -30,10 +31,13 @@ class ViewNoteFragment : Fragment() {
         //TextViews
         binding.editTextHeading.text = notes.data.title
         binding.editTextContent.text = notes.data.content
+        binding.textViewDateandtime.text = "${notes.data.lastEditedDay}, ${notes.data.lastEditedTime} | "
+
 
  //--------------------------------------------Toolbar--------------------------------------------------//
         /*
         -----Toolbar icon Documentation-----
+
         * Navigation button icon is getting setup directly from toolbar component inside fragment_view_note.xml
         *
         * Action button icon is getting setup from editnote_fragment_menu.xml inside 'res/menu'  directory
@@ -70,8 +74,7 @@ class ViewNoteFragment : Fragment() {
 //----------------------------------------------------------------------------------------------------//
 
         //Character counter
-        var characterCount = binding.editTextContent.text.length.toString()
-        binding.textViewCounter.text = "$characterCount Characters"
+        binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
 
 
 

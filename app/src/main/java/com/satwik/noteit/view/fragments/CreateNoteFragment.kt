@@ -3,6 +3,7 @@ package com.satwik.noteit.view.fragments
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +14,10 @@ import androidx.navigation.fragment.findNavController
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentCreateNoteBinding
 import com.satwik.noteit.model.NotesEntity
+import com.satwik.noteit.utils.CalendarUtil
 import com.satwik.noteit.utils.KeyboardUtil
 import com.satwik.noteit.viewmodel.MainViewModel
+import java.util.Calendar
 
 class CreateNoteFragment : Fragment() {
     private lateinit var binding: FragmentCreateNoteBinding
@@ -46,7 +49,8 @@ class CreateNoteFragment : Fragment() {
         }
 //---------------------------------------------------------------------------------------------------//
 
-
+        //Current Date and time
+        binding.textViewDateandtime.text = "${CalendarUtil.getCurrentDay()}, ${CalendarUtil.getCurrentTime()} | "
 
         //Live Character Counter
         binding.editTextContent.addTextChangedListener(object : TextWatcher {
@@ -59,15 +63,17 @@ class CreateNoteFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var characterCount = binding.editTextContent.text.length.toString()
-                binding.textViewCounter.text = "$characterCount Characters"
+                binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
             }
         })
+
+
+
 
         return binding.root
     }
 
-//------------------------Functions----------------------------//
+
     private fun saveNewNote() {
         if (binding.editTextContent.text.toString().isEmpty()) {
             Toast.makeText(activity, "Note content is empty", Toast.LENGTH_SHORT).show()
@@ -75,7 +81,11 @@ class CreateNoteFragment : Fragment() {
         } else {
             val title = binding.editTextHeading.text.toString()
             val content = binding.editTextContent.text.toString()
-            val data = NotesEntity(null, title, content)
+            val lastEditedDate = CalendarUtil.getCurrentDate()
+            val lastEditedDay = CalendarUtil.getCurrentDay()
+            val lastEditedTime = CalendarUtil.getCurrentTime()
+            val lastEditedMonth = CalendarUtil.getCurrentMonth()
+            val data = NotesEntity(null, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth)
             mainViewModel.insertNotes(data)
             findNavController().popBackStack()
         }
@@ -86,6 +96,6 @@ class CreateNoteFragment : Fragment() {
         super.onStart()
         KeyboardUtil.showSoftKeyboard(binding.editTextHeading)
     }
-//-----------------------------------------------------------//
+
 
 }

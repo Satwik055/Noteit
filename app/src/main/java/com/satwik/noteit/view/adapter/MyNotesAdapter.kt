@@ -36,6 +36,10 @@ class MyNotesAdapter(val requireContext: Context, private var notesList: List<No
             holder.binding.largeCardContent.text = data.content
         }
 
+        //Sets up card date and month
+        holder.binding.largeCardLastEditedDateAndMonth.text = "${data.lastEditedDate} ${data.lastEditedMonth}"
+
+        //Card click-listener
         holder.binding.root.setOnClickListener{
             val action = HomeFragmentDirections.actionHomeFragmentToViewNoteFragment(data)
             findNavController(it).navigate(action)

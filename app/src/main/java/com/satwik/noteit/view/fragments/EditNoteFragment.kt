@@ -14,6 +14,7 @@ import androidx.navigation.fragment.navArgs
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentEditNoteBinding
 import com.satwik.noteit.model.NotesEntity
+import com.satwik.noteit.utils.CalendarUtil
 import com.satwik.noteit.utils.KeyboardUtil
 import com.satwik.noteit.viewmodel.MainViewModel
 
@@ -52,9 +53,11 @@ class EditNoteFragment : Fragment() {
         }
 //-----------------------------------------------------------------------------------------------------//
 
+        //Current Date and time
+        binding.textViewDateandtime.text = "${CalendarUtil.getCurrentDay()}, ${CalendarUtil.getCurrentTime()} | "
+
         //Setting up initial character count
-        var characterCount = binding.editTextContent.text.length.toString()
-        binding.textViewCounter.text = "$characterCount Characters"
+        binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
 
         //Live Character counter
         binding.editTextContent.addTextChangedListener(object : TextWatcher {
@@ -67,8 +70,7 @@ class EditNoteFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var characterCount = binding.editTextContent.text.length.toString()
-                binding.textViewCounter.text = "$characterCount Characters"
+                binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
             }
         })
 
@@ -82,7 +84,11 @@ class EditNoteFragment : Fragment() {
         val title = binding.editTextHeading.text.toString()
         val content = binding.editTextContent.text.toString()
         val id = notes.editableData.id
-        val editedData = NotesEntity(id, title, content)
+        val lastEditedDate = CalendarUtil.getCurrentDate()
+        val lastEditedDay = CalendarUtil.getCurrentDay()
+        val lastEditedTime = CalendarUtil.getCurrentTime()
+        val lastEditedMonth = CalendarUtil.getCurrentMonth()
+        val editedData = NotesEntity(id, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth)
         mainViewModel.updateNotes(editedData)
         findNavController().navigate(R.id.action_editNoteFragment_to_homeFragment)
     }
