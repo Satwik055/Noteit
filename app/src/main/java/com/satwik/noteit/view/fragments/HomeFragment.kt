@@ -21,12 +21,13 @@ class HomeFragment : Fragment() {
     private lateinit var binding:FragmentHomeBinding
     private val mainViewModel:MainViewModel by viewModels()
     private var oldMyNotes = arrayListOf<NotesEntity>()
-    lateinit var adapter:MyNotesAdapter
+    private lateinit var adapter:MyNotesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?):
             View { binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+
 
         //FAB listener
         binding.floatingActionButton.setOnClickListener{
@@ -35,12 +36,18 @@ class HomeFragment : Fragment() {
 
         //Setting up Recycler View
         mainViewModel.getNote().observe(viewLifecycleOwner) { notesList ->
-            oldMyNotes = notesList as ArrayList<NotesEntity>
-            binding.myNotesRecyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayout.VERTICAL)
-            adapter =  MyNotesAdapter(requireContext(), notesList)
-            binding.myNotesRecyclerView.adapter = adapter
 
-
+            //Showing illustration and instruction if user hasn't created any notes
+            if(notesList.isEmpty()){
+                binding.imageViewIllustration.visibility = View.VISIBLE
+                binding.textViewInstructions.visibility = View.VISIBLE
+            }
+            else{
+                oldMyNotes = notesList as ArrayList<NotesEntity>
+                binding.myNotesRecyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayout.VERTICAL)
+                adapter =  MyNotesAdapter(requireContext(), notesList)
+                binding.myNotesRecyclerView.adapter = adapter
+            }
         }
 
         //Searchbar
@@ -72,6 +79,8 @@ class HomeFragment : Fragment() {
         }
         adapter.filtering(newFilteredList)
     }
+
+
 
 
 }
