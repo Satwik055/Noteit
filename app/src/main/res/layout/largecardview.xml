@@ -29,13 +29,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="43dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:ellipsize="end"
         android:maxLines="9"
         android:fontFamily="@font/manrope_light"
         android:text="Content"
         android:textColor="#80FFFFFF"
         android:textSize="13sp" />
+
+    <!--
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
@@ -57,6 +59,8 @@
             android:textSize="10dp" />
 
     </com.google.android.material.card.MaterialCardView>
+
+    -->
 
     <TextView
         android:id="@+id/largeCard_lastEditedDateAndMonth"
