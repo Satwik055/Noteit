@@ -5,19 +5,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.satwik.noteit.R
 import com.satwik.noteit.databinding.LargecardviewBinding
 import com.satwik.noteit.model.NotesEntity
 import com.satwik.noteit.view.fragments.HomeFragmentDirections
 
-class MyNotesAdapter(val requireContext: Context, private var notesList: List<NotesEntity>) :RecyclerView.Adapter<MyNotesAdapter.MynotesViewholder>() {
+class MyNotesAdapter(private val requireContext: Context, private var notesList: List<NotesEntity>) :RecyclerView.Adapter<MyNotesAdapter.MynotesViewholder>() {
 
     fun filtering(newFilteredList: ArrayList<NotesEntity>) {
         notesList = newFilteredList
         notifyDataSetChanged()
     }
-    class MynotesViewholder(val binding:LargecardviewBinding) : RecyclerView.ViewHolder(binding.root) {
-
-    }
+    class MynotesViewholder(val binding:LargecardviewBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MynotesViewholder {
         return MynotesViewholder(LargecardviewBinding.inflate(LayoutInflater.from(parent.context),parent,false))
@@ -37,7 +36,8 @@ class MyNotesAdapter(val requireContext: Context, private var notesList: List<No
         }
 
         //Sets up card date and month
-        holder.binding.largeCardLastEditedDateAndMonth.text = "${data.lastEditedDate} ${data.lastEditedMonth}"
+        holder.binding.largeCardLastEditedDateAndMonth.text = requireContext.resources.getString(R.string.label_card_dateAndMonth, data.lastEditedDate, data.lastEditedMonth)
+
 
         //Card click-listener
         holder.binding.root.setOnClickListener{

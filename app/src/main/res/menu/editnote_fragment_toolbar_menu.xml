@@ -4,7 +4,7 @@
     <item
         android:title="Confirm"
         android:id="@+id/editnote_toolbar_options_confirm"
-        android:icon="@drawable/check"
+        android:icon="@drawable/ic_checkmark"
         app:showAsAction="ifRoom"
         />
 </menu>

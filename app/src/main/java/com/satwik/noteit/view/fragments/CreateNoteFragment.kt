@@ -3,7 +3,6 @@ package com.satwik.noteit.view.fragments
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,6 @@ import com.satwik.noteit.model.NotesEntity
 import com.satwik.noteit.utils.CalendarUtil
 import com.satwik.noteit.utils.KeyboardUtil
 import com.satwik.noteit.viewmodel.MainViewModel
-import java.util.Calendar
 
 class CreateNoteFragment : Fragment() {
     private lateinit var binding: FragmentCreateNoteBinding
@@ -50,7 +48,7 @@ class CreateNoteFragment : Fragment() {
 //---------------------------------------------------------------------------------------------------//
 
         //Current Date and time
-        binding.textViewDateandtime.text = "${CalendarUtil.getCurrentDay()}, ${CalendarUtil.getCurrentTime()} | "
+        binding.textViewDateandtime.text = getString(R.string.label_textView_dateAndTime, CalendarUtil.getCurrentDay(), CalendarUtil.getCurrentTime() )
 
         //Live Character Counter
         binding.editTextContent.addTextChangedListener(object : TextWatcher {
@@ -63,7 +61,7 @@ class CreateNoteFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
+                binding.textViewCounter.text = getString(R.string.label_textView_counter, binding.editTextContent.text.length.toString())
             }
         })
 

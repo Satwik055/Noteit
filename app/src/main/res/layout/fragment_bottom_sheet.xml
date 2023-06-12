@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bottomsheet_bg"
-    tools:context=".view.fragments.BottomSheetFragment">
+    android:background="@drawable/bottomsheet_bg">
 
 
     <TextView
@@ -15,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/manrope"
-        android:text="Want to delete this note ?"
+        android:text="@string/bottomSheet_message"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,15 +27,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/crimson_blue"
         android:fontFamily="@font/manrope"
-        android:text="Delete"
+        android:text="@string/label_deleteButton_bottomSheet"
+        android:backgroundTint="@color/ultramarineBlue"
         android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMessage"
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/btn_bottomfrag_cancel"
@@ -47,11 +47,12 @@
         android:layout_marginTop="11dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/manrope"
-        android:text="Cancel"
+        android:text="@string/label_cancelButton_bottomSheet"
         android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_bottomfrag_delete" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_bottomfrag_delete"
+        tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

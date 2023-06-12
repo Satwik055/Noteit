@@ -6,7 +6,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -54,10 +53,10 @@ class EditNoteFragment : Fragment() {
 //-----------------------------------------------------------------------------------------------------//
 
         //Current Date and time
-        binding.textViewDateandtime.text = "${CalendarUtil.getCurrentDay()}, ${CalendarUtil.getCurrentTime()} | "
+        binding.textViewDateandtime.text = getString(R.string.label_textView_dateAndTime, CalendarUtil.getCurrentDay(), CalendarUtil.getCurrentTime())
 
         //Setting up initial character count
-        binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
+        binding.textViewCounter.text = getString(R.string.label_textView_counter, binding.editTextContent.text.length.toString())
 
         //Live Character counter
         binding.editTextContent.addTextChangedListener(object : TextWatcher {
@@ -70,7 +69,8 @@ class EditNoteFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                binding.textViewCounter.text = "${binding.editTextContent.text.length} Characters"
+                binding.textViewCounter.text = getString(R.string.label_textView_counter, binding.editTextContent.text.length.toString())
+
             }
         })
 
