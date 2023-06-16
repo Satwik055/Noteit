@@ -8,4 +8,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white50">#80FFFFFF</color>
     <color name="white10">#1AFFFFFF</color>
+
+    <color name="seashell">#F4F0F0</color>
+    <color name="grey">#808080</color>
 </resources>

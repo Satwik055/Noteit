@@ -19,15 +19,13 @@
         android:fontFamily="@font/manrope_medium"
         android:gravity="start"
         android:hint="@string/placeholderText_editTextContent"
-        android:textColor="@color/white"
-        android:textColorHint="#777777"
+        android:importantForAutofill="no"
         android:textCursorDrawable="@drawable/custom_cursor"
         android:textSize="@dimen/note_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativelayout"
-        android:importantForAutofill="no"
         tools:ignore="TextFields" />
 
     <EditText
@@ -41,8 +39,6 @@
         android:fontFamily="@font/manrope_semibold"
         android:hint="@string/hint_editTextHeading"
         android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textColorHint="#777777"
         android:textSize="@dimen/note_heading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

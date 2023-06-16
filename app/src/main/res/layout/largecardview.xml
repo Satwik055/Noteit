@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="16dp"
-    android:backgroundTint="@color/mirage"
+    android:backgroundTint="?colorSecondary"
     app:cardCornerRadius="16dp"
     app:contentPadding="13dp">
 
@@ -20,7 +20,6 @@
         android:text="Title"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/white"
         android:textSize="16sp"
         tools:ignore="HardcodedText" />
 
@@ -35,7 +34,7 @@
         android:maxLines="9"
         android:fontFamily="@font/manrope_light"
         android:text="Content"
-        android:textColor="#80FFFFFF"
+        android:textColor="@color/grey"
         android:textSize="13sp"
         tools:ignore="HardcodedText" />
 
@@ -72,7 +71,7 @@
         android:fontFamily="@font/manrope"
         android:gravity="bottom"
         android:text="6 Dec"
-        android:textColor="@color/white50"
+        android:textColor="@color/grey"
         android:textSize="10sp"
         tools:ignore="HardcodedText,SmallSp"/>
 

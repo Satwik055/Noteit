@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="cinder">#0E121B</color>
+    <color name="mirage">#171C26</color>
+    <color name="ultramarineBlue">#3269FF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white50">#80FFFFFF</color>
+    <color name="white10">#1AFFFFFF</color>
+
+    <color name="seashell">#F4F0F0</color>
+    <color name="grey">#808080</color>
+</resources>
