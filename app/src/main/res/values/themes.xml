@@ -4,36 +4,32 @@
     <style name="Theme.NoteIt" parent="Theme.Material3.Light.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimaryVariant">@color/cinder</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/seashell</item>
+        <item name="colorOnPrimary">@color/black</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondaryVariant">@color/ultramarineBlue</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/seashell</item>
+        <item name="colorOnSecondary">@color/monsoon</item>
+
+        <!--================Theme customization=================-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >@color/white</item>
+        <item name="android:statusBarColor" >?colorPrimary</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!-- Window & Toolbar Background color -->
-        <item name="android:windowBackground">@color/white</item>
-
-        <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:windowBackground">?colorPrimary</item>
 
         <!-- Text color hint -->
-        <item name="android:textColorHint">#777777</item>
+        <item name="android:textColorHint">?colorOnSecondary</item>
 
         <!-- Icon color -->
-        <item name="iconTint">@color/black</item>
-        <item name="tint">@color/black</item>
+        <item name="colorControlNormal">?colorOnPrimary</item>
 
-        <!-- Searchbar color -->
-        <item name="colorPrimary">@color/seashell</item>
-
-        <!-- Card background color -->
-        <item name="colorSecondary">@color/seashell</item>
-
-        <item name="strokeColor">@color/grey</item>
+        <!-- Text Color -->
+        <item name="android:textColor">?colorOnPrimary</item>
 
 
 

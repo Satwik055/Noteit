@@ -48,7 +48,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/manrope"
         android:text="@string/label_cancelButton_bottomSheet"
-        android:textColor="@color/white"
+        android:textColor="?colorOnPrimary"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

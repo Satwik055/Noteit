@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Elevated"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="16dp"
+    android:layout_margin="8dp"
     android:backgroundTint="?colorSecondary"
+    app:cardElevation="10dp"
     app:cardCornerRadius="16dp"
     app:contentPadding="13dp">
 
@@ -34,7 +36,7 @@
         android:maxLines="9"
         android:fontFamily="@font/manrope_light"
         android:text="Content"
-        android:textColor="@color/grey"
+        android:textColor="?colorOnSecondary"
         android:textSize="13sp"
         tools:ignore="HardcodedText" />
 
@@ -71,10 +73,9 @@
         android:fontFamily="@font/manrope"
         android:gravity="bottom"
         android:text="6 Dec"
-        android:textColor="@color/grey"
+        android:textColor="?colorOnSecondary"
         android:textSize="10sp"
         tools:ignore="HardcodedText,SmallSp"/>
 
+</com.google.android.material.card.MaterialCardView>
 
-
-</androidx.cardview.widget.CardView>

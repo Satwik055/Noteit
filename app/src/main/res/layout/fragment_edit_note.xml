@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_medium"
             android:text="@string/placeholderText_textView_counter"
-            android:textColor="#747474"
+            android:textColor="?colorOnSecondary"
             android:gravity="start"
             android:textSize="15sp" />
 
@@ -89,7 +89,7 @@
             android:fontFamily="@font/manrope_medium"
             android:text="@string/placeholderText_textView_dateAndTime"
             android:gravity="start"
-            android:textColor="#747474"
+            android:textColor="?colorOnSecondary"
             android:textSize="15sp" />
     </LinearLayout>
 

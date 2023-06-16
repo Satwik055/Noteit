@@ -4,36 +4,30 @@
     <style name="Theme.NoteIt" parent="Theme.Material3.Dark.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimaryVariant">@color/cinder</item>
+        <item name="colorPrimary">@color/cinder</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondaryVariant">@color/ultramarineBlue</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">@color/mirage</item>
+        <item name="colorOnSecondary">@color/monsoon</item>
+        <item name="colorSecondaryVariant">@color/batlicSea</item>
+
+        <!--================Theme customization=================-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >?colorPrimary</item>
 
         <!-- Window & Toolbar Background color -->
-        <item name="android:windowBackground">@color/cinder</item>
+        <item name="android:windowBackground">?colorPrimary</item>
 
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColor">?colorOnPrimary</item>
 
         <!-- Text color hint -->
-        <item name="android:textColorHint">#777777</item>
+        <item name="android:textColorHint">?colorOnSecondary</item>
 
         <!-- Icon color -->
-        <item name="iconTint">@color/white</item>
-        <item name="tint">@color/white</item>
-
-        <!-- Searchbar color -->
-        <item name="colorPrimary">@color/mirage</item>
-
-        <!-- Card background color -->
-        <item name="colorSecondary">@color/mirage</item>
-
-        <item name="strokeColor">@color/transparent</item>
+        <item name="colorControlNormal">@color/white</item>
 
 
 
