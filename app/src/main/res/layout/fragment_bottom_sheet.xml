@@ -29,7 +29,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/manrope"
         android:text="@string/label_deleteButton_bottomSheet"
-        android:backgroundTint="@color/ultramarineBlue"
+        android:backgroundTint="?colorAccent"
         android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"

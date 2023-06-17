@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Base application theme. -->
     <style name="Theme.NoteIt" parent="Theme.Material3.Dark.NoActionBar">
@@ -6,6 +6,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/cinder</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorAccent">@color/ultramarineBlue</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/mirage</item>

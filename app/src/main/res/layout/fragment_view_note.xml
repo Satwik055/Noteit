@@ -78,11 +78,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/CustomOverflowMenu"
+        app:popupTheme="@style/CustomOverflowMenu"
+        app:menu="@menu/viewnote_fragment_toolbar_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/viewnote_fragment_toolbar_menu"
         android:paddingEnd="8dp"
         app:navigationIcon="@drawable/ic_caret_left"
         tools:ignore="RtlSymmetry" />
