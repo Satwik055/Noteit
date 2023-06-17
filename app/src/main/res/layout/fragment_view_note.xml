@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/CustomOverflowMenu"
+        android:theme="@style/CustomOverflowMenu"
         app:menu="@menu/viewnote_fragment_toolbar_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
