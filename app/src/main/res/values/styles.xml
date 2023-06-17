@@ -2,7 +2,6 @@
 <resources>
 
     <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:colorBackground">@color/ultramarineBlue</item>
         <item name="android:popupBackground">@color/ultramarineBlue</item>
         <item name="fontFamily">@font/manrope</item>
         <item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>
