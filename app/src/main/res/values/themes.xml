@@ -1,25 +1,37 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="Theme.NoteIt" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.NoteIt" parent="Theme.Material3.Light.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/ultramarineBlue</item>
-        <item name="colorPrimaryVariant">@color/cinder</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/seashell</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorAccent">@color/ultramarineBlue</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/ultramarineBlue</item>
-        <item name="colorSecondaryVariant">@color/ultramarineBlue</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/seashell</item>
+        <item name="colorOnSecondary">@color/monsoon</item>
+
+        <!--================Theme customization=================-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >?colorPrimary</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!-- Window & Toolbar Background color -->
-        <item name="android:windowBackground">@color/cinder</item>
+        <item name="android:windowBackground">?colorPrimary</item>
 
+        <!-- Text color hint -->
+        <item name="android:textColorHint">?colorOnSecondary</item>
 
+        <!-- Icon color -->
+        <item name="colorControlNormal">?colorOnPrimary</item>
+
+        <!-- Text Color -->
+        <item name="android:textColor">?colorOnPrimary</item>
 
 
     </style>

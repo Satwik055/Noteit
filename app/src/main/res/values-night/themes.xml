@@ -1,22 +1,35 @@
 <resources>
+
     <!-- Base application theme. -->
     <style name="Theme.NoteIt" parent="Theme.Material3.Dark.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/ultramarineBlue</item>
-        <item name="colorPrimaryVariant">@color/white50</item>
+        <item name="colorPrimary">@color/cinder</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorAccent">@color/ultramarineBlue</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/ultramarineBlue</item>
-        <item name="colorSecondaryVariant">@color/ultramarineBlue</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">@color/mirage</item>
+        <item name="colorOnSecondary">@color/monsoon</item>
+        <item name="colorSecondaryVariant">@color/batlicSea</item>
+
+        <!--================Theme customization=================-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >@color/cinder</item>
+        <item name="android:statusBarColor" >?colorPrimary</item>
 
         <!-- Window & Toolbar Background color -->
-        <item name="android:windowBackground">@color/cinder</item>
+        <item name="android:windowBackground">?colorPrimary</item>
+
+        <!-- Text Color -->
+        <item name="android:textColor">?colorOnPrimary</item>
+
+        <!-- Text color hint -->
+        <item name="android:textColorHint">?colorOnSecondary</item>
+
+        <!-- Icon color -->
+        <item name="colorControlNormal">@color/white</item>
+
 
 
     </style>
