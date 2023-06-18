@@ -30,7 +30,11 @@
         <!-- Icon color -->
         <item name="colorControlNormal">@color/white</item>
 
-
+        <!--Chip Style-->
+        <item name="chipStyle">@style/Widget.Material3.Chip.Filter.Elevated</item>
+        <item name="chipCornerRadius">100dp</item>
 
     </style>
+
+
 </resources>

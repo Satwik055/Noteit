@@ -3,8 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="Confirm"
         android:id="@+id/createnote_toolbar_options_confirm"
+        android:title="Confirm"
         android:icon="@drawable/ic_checkmark"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/createnote_toolbar_options_tag"
+        android:title="Tag"
+        android:icon="@drawable/ic_btn_menu"
+        app:showAsAction="ifRoom"/>
+
+
 </menu>

@@ -11,4 +11,10 @@
         <item name="android:src">@drawable/ic_btn_menu</item>
     </style>
 
+    <style name="CustomChip" parent="Widget.Material3.Chip.Filter.Elevated">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="font">@font/manrope</item>
+        <item name="android:fontFamily">@font/manrope</item>
+    </style>
+
 </resources>
