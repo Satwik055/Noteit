@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_createNoteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_createNoteFragment_to_tagBottomSheetFragment"
+            app:destination="@id/tagBottomSheetFragment" />
     </fragment>
 
     <fragment
@@ -43,6 +46,7 @@
             android:id="@+id/action_viewNoteFragment_to_editNoteFragment"
             app:destination="@id/editNoteFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/editNoteFragment"
         android:name="com.satwik.noteit.view.fragments.EditNoteFragment"
@@ -55,5 +59,10 @@
             android:id="@+id/action_editNoteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+
+    <dialog
+        android:id="@+id/tagBottomSheetFragment"
+        android:name="com.satwik.noteit.view.fragments.TagBottomSheetFragment"
+        android:label="TagBottomSheetFragment" />
 
 </navigation>

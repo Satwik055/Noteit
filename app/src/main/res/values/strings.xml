@@ -18,5 +18,7 @@
     <string name="placeholderText_textView_counter">0 Characters</string>
     <string name="placeholderText_editText_content">This is dummy text, which can be edited by the user</string>
     <string name="placeholderText_editText_heading">Edit this Title</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

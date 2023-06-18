@@ -17,7 +17,6 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentCreateNoteBinding
-import com.satwik.noteit.databinding.TagsBottomSheetBinding
 import com.satwik.noteit.model.NotesEntity
 import com.satwik.noteit.utils.CalendarUtil
 import com.satwik.noteit.utils.KeyboardUtil
@@ -41,12 +40,11 @@ class CreateNoteFragment : Fragment() {
                     saveNewNote()
                     true
                 }
-                //Tag button
+                //Tag button (Opens Tag bottom sheet)
                 R.id.createnote_toolbar_options_tag -> {
-                    openTagBottomSheet()
+                    findNavController().navigate(R.id.action_createNoteFragment_to_tagBottomSheetFragment)
                     true
                 }
-
 
                 //Default
                 else -> { true }
@@ -88,7 +86,8 @@ class CreateNoteFragment : Fragment() {
         if (binding.editTextContent.text.toString().isEmpty()) {
             Toast.makeText(activity, "Note content is empty", Toast.LENGTH_SHORT).show()
 
-        } else {
+        }
+        else {
             val title = binding.editTextHeading.text.toString()
             val content = binding.editTextContent.text.toString()
             val lastEditedDate = CalendarUtil.getCurrentDate()
@@ -99,38 +98,6 @@ class CreateNoteFragment : Fragment() {
             mainViewModel.insertNotes(data)
             findNavController().popBackStack()
         }
-    }
-
-    private fun openTagBottomSheet(){
-        val dialog = BottomSheetDialog(requireContext())
-        dialog.setContentView(R.layout.tags_bottom_sheet)
-        dialog.show()
-
-        val chipGroup = dialog.findViewById<ChipGroup>(R.id.chipGroup)
-        val etCreateNewTag = dialog.findViewById<EditText>(R.id.et_create_new_tag)
-        val btnCreateNewTag = dialog.findViewById<Button>(R.id.btn_create_new_tag)
-
-        btnCreateNewTag?.setOnClickListener {
-            val chipText = etCreateNewTag?.text.toString()
-
-            if(chipText.isEmpty()){
-                //Do Nothing
-            }
-            else{
-                createNewChip(chipGroup, chipText)
-                etCreateNewTag?.text?.clear()
-            }
-
-
-        }
-
-    }
-
-    private fun createNewChip(chipGroup:ChipGroup?, chipText:String ) {
-        val chip = Chip(context)
-        chip.text = chipText
-        chip.isCheckable = true
-        chipGroup?.addView(chip)
     }
 
     //Opening keyboard as user enters in EditNoteFragment
