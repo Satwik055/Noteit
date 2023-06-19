@@ -38,7 +38,6 @@ class MyNotesAdapter(private val requireContext: Context, private var notesList:
         //Sets up card date and month
         holder.binding.largeCardLastEditedDateAndMonth.text = requireContext.resources.getString(R.string.label_card_dateAndMonth, data.lastEditedDate, data.lastEditedMonth)
 
-
         //Card click-listener
         holder.binding.root.setOnClickListener{
             val action = HomeFragmentDirections.actionHomeFragmentToViewNoteFragment(data)

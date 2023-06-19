@@ -88,7 +88,7 @@ class EditNoteFragment : Fragment() {
         val lastEditedDay = CalendarUtil.getCurrentDay()
         val lastEditedTime = CalendarUtil.getCurrentTime()
         val lastEditedMonth = CalendarUtil.getCurrentMonth()
-        val editedData = NotesEntity(id, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth)
+        val editedData = NotesEntity(id, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth, null)
         mainViewModel.updateNotes(editedData)
         findNavController().navigate(R.id.action_editNoteFragment_to_homeFragment)
     }

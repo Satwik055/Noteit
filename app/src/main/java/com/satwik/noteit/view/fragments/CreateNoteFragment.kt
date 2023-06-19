@@ -31,6 +31,7 @@ class CreateNoteFragment : Fragment() {
         savedInstanceState: Bundle?):
             View { binding = FragmentCreateNoteBinding.inflate(layoutInflater, container, false)
 
+
 //--------------------------------------------Toolbar--------------------------------------------------//
         binding.toolbarCreatenote.setOnMenuItemClickListener {
             when (it.itemId) {
@@ -53,7 +54,8 @@ class CreateNoteFragment : Fragment() {
 
         //Navigation Button (Back Button)
         binding.toolbarCreatenote.setNavigationOnClickListener {
-            findNavController().popBackStack()
+            val text = getDataFromCurrentBackstack<List<String>>("SELECTED_CHIP_TEXT")?.joinToString(",")
+            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
         }
 //---------------------------------------------------------------------------------------------------//
 
@@ -78,9 +80,10 @@ class CreateNoteFragment : Fragment() {
 
 
 
+
+
         return binding.root
     }
-
 
     private fun saveNewNote() {
         if (binding.editTextContent.text.toString().isEmpty()) {
@@ -94,7 +97,8 @@ class CreateNoteFragment : Fragment() {
             val lastEditedDay = CalendarUtil.getCurrentDay()
             val lastEditedTime = CalendarUtil.getCurrentTime()
             val lastEditedMonth = CalendarUtil.getCurrentMonth()
-            val data = NotesEntity(null, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth)
+            val tags = null
+            val data = NotesEntity(null, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth, tags)
             mainViewModel.insertNotes(data)
             findNavController().popBackStack()
         }
@@ -104,6 +108,17 @@ class CreateNoteFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         KeyboardUtil.showSoftKeyboard(binding.editTextHeading)
+    }
+
+    /**
+     * Returns data (if any) of type T from the current backstack using the specified key
+     * @param key
+     * The key used to retrieve data from current back stack
+     * @param T
+     * Type of the data to retrieve
+     */
+    private fun <T> getDataFromCurrentBackstack(key:String): T? {
+        return findNavController().currentBackStackEntry?.savedStateHandle?.get<T>(key)
     }
 
 

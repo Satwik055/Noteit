@@ -63,6 +63,10 @@
     <dialog
         android:id="@+id/tagBottomSheetFragment"
         android:name="com.satwik.noteit.view.fragments.TagBottomSheetFragment"
-        android:label="TagBottomSheetFragment" />
+        android:label="TagBottomSheetFragment" >
+        <action
+            android:id="@+id/action_tagBottomSheetFragment_to_createNoteFragment"
+            app:destination="@id/createNoteFragment" />
+    </dialog>
 
 </navigation>

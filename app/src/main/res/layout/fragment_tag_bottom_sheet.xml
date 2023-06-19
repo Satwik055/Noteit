@@ -25,6 +25,7 @@
             android:textSize="17sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_saveTag"
             style="@style/Widget.Material3.Button.IconButton.Filled"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -40,15 +40,14 @@
         android:textSize="13sp"
         tools:ignore="HardcodedText" />
 
-    <!--
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
-        android:backgroundTint="@color/secondary_greyblue"
+        android:backgroundTint="@color/mirage"
         app:cardCornerRadius="5dp"
-        app:strokeColor="@color/white50"
+        app:strokeColor="@color/monsoon"
         app:strokeWidth="0.6dp">
 
         <TextView
@@ -58,12 +57,11 @@
             android:layout_margin="5dp"
             android:fontFamily="@font/manrope"
             android:text="None"
-            android:textColor="@color/white50"
-            android:textSize="10dp" />
+            android:textColor="@color/monsoon"
+            android:textSize="10sp" />
 
     </com.google.android.material.card.MaterialCardView>
 
-    -->
 
     <TextView
         android:id="@+id/largeCard_lastEditedDateAndMonth"
