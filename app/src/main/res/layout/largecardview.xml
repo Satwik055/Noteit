@@ -42,6 +42,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewTags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
@@ -51,6 +52,7 @@
         app:strokeWidth="0.6dp">
 
         <TextView
+            android:id="@+id/textViewTags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

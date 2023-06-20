@@ -54,8 +54,7 @@ class CreateNoteFragment : Fragment() {
 
         //Navigation Button (Back Button)
         binding.toolbarCreatenote.setNavigationOnClickListener {
-            val text = getDataFromCurrentBackstack<List<String>>("SELECTED_CHIP_TEXT")?.joinToString(",")
-            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+            findNavController().popBackStack()
         }
 //---------------------------------------------------------------------------------------------------//
 
@@ -97,7 +96,7 @@ class CreateNoteFragment : Fragment() {
             val lastEditedDay = CalendarUtil.getCurrentDay()
             val lastEditedTime = CalendarUtil.getCurrentTime()
             val lastEditedMonth = CalendarUtil.getCurrentMonth()
-            val tags = null
+            val tags = getDataFromCurrentBackstack<List<String>>("SELECTED_CHIP_TEXT")?.joinToString(",")
             val data = NotesEntity(null, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth, tags)
             mainViewModel.insertNotes(data)
             findNavController().popBackStack()

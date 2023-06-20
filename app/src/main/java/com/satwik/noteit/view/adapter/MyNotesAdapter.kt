@@ -44,8 +44,24 @@ class MyNotesAdapter(private val requireContext: Context, private var notesList:
             findNavController(it).navigate(action)
         }
 
+        //Card Tag
+        if(data.tags.isNullOrEmpty()){
+            //pass
+        }
+        else{
+            holder.binding.textViewTags.text = data.tags
+        }
+
+
+
+
     }
 
-    override fun getItemCount() = notesList.size
+    override fun getItemCount() =
+        notesList.size
+
+    private fun stringToList(string:String?):List<String>{
+        return listOf(*string?.split(",")!!.toTypedArray())
+    }
 
 }
