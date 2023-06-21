@@ -45,15 +45,9 @@ class MyNotesAdapter(private val requireContext: Context, private var notesList:
         }
 
         //Card Tag
-        if(data.tags.isNullOrEmpty()){
-            //pass
+        if(data.tags != emptyList<String>()){
+            holder.binding.textViewTags.text = data.tags!!.first()
         }
-        else{
-            holder.binding.textViewTags.text = data.tags
-        }
-
-
-
 
     }
 
@@ -62,6 +56,11 @@ class MyNotesAdapter(private val requireContext: Context, private var notesList:
 
     private fun stringToList(string:String?):List<String>{
         return listOf(*string?.split(",")!!.toTypedArray())
+    }
+
+    private fun onlyFirstTag(string:String):String{
+        val list = listOf(*string.split(",").toTypedArray())
+        return list.elementAt(1)
     }
 
 }

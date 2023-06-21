@@ -34,6 +34,6 @@ data class NotesEntity(
     var lastEditedMonth:String,
 
     @ColumnInfo(name = "notes_tags" )
-    var tags: String?,
+    var tags: ArrayList<String>?,
 
     ):Parcelable

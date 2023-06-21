@@ -26,7 +26,7 @@ class TagBottomSheetFragment :BottomSheetDialogFragment() {
             View {binding = FragmentTagBottomSheetBinding.inflate(layoutInflater, container, false)
 
 
-        //Plus(+) button click listener of createTag-editText
+        //Plus(+) button of CreateNewTag editText
         binding.btnCreateNewTag.setOnClickListener {
             val chipText = binding.etCreateNewTag.text.toString()
             if (chipText.isNotEmpty()) {
@@ -35,7 +35,7 @@ class TagBottomSheetFragment :BottomSheetDialogFragment() {
             }
         }
 
-        //Save tag button click-listener
+        //Save tag button
         binding.btnSaveTag.setOnClickListener {
             val selectedChipText = getSelectedChipText(binding.chipGroup)
             if(selectedChipText.isNotEmpty()){
@@ -59,7 +59,7 @@ class TagBottomSheetFragment :BottomSheetDialogFragment() {
     }
 
     private fun getSelectedChipText(chipGroup:ChipGroup):List<String>{
-        val selectedChipTexts = mutableListOf<String>()
+        val selectedChipTexts = ArrayList<String>()
         for(i in 0 until chipGroup.childCount){
             val chip = chipGroup.getChildAt(i) as Chip
             if (chip.isChecked){

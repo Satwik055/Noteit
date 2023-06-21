@@ -96,7 +96,8 @@ class CreateNoteFragment : Fragment() {
             val lastEditedDay = CalendarUtil.getCurrentDay()
             val lastEditedTime = CalendarUtil.getCurrentTime()
             val lastEditedMonth = CalendarUtil.getCurrentMonth()
-            val tags = getDataFromCurrentBackstack<List<String>>("SELECTED_CHIP_TEXT")?.joinToString(",")
+            //Converting list of tags to string because room doesn't support list data type
+            val tags = getDataFromCurrentBackstack<ArrayList<String>>("SELECTED_CHIP_TEXT")
             val data = NotesEntity(null, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth, tags)
             mainViewModel.insertNotes(data)
             findNavController().popBackStack()
