@@ -3,6 +3,7 @@ package com.satwik.noteit.view.fragments
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,7 +62,13 @@ class HomeFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                notesFiltering(s)
+                try{
+                    notesFiltering(s)
+                }
+                catch(e:Exception){
+                    Log.e("Error", e.toString())
+                }
+
             }
         })
 
