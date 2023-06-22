@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,19 +9,18 @@
     <EditText
         android:id="@+id/editText_content"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="49dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/transparent"
         android:fontFamily="@font/manrope_medium"
         android:gravity="start"
         android:hint="@string/placeholderText_editTextContent"
         android:importantForAutofill="no"
+        android:text="Lorem ipsum sin-sinati babla boo"
         android:textCursorDrawable="@drawable/custom_cursor"
         android:textSize="@dimen/note_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativelayout"
@@ -38,13 +36,13 @@
         android:background="@color/transparent"
         android:fontFamily="@font/manrope_semibold"
         android:hint="@string/hint_editTextHeading"
+        android:importantForAutofill="no"
         android:textAlignment="textStart"
+        android:textCursorDrawable="@drawable/custom_cursor"
         android:textSize="@dimen/note_heading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textCursorDrawable="@drawable/custom_cursor"
-        android:importantForAutofill="no"
         tools:ignore="TextFields" />
 
     <androidx.appcompat.widget.Toolbar
@@ -52,11 +50,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
+        android:paddingEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/createnote_fragment_toolbar_menu"
-        android:paddingEnd="8dp"
         app:navigationIcon="@drawable/ic_caret_left"
         tools:ignore="RtlSymmetry" />
 
@@ -76,9 +74,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_medium"
+            android:gravity="start"
             android:text="@string/placeholderText_textView_dateAndTime"
             android:textColor="?colorOnSecondary"
-            android:gravity="start"
             android:textSize="15sp" />
 
         <TextView
@@ -86,10 +84,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_medium"
-            android:text="@string/placeholderText_textView_counter"
             android:gravity="start"
+            android:text="@string/placeholderText_textView_counter"
             android:textColor="?colorOnSecondary"
             android:textSize="15sp" />
     </LinearLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_content">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coca" />
+
+    </com.google.android.material.chip.ChipGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

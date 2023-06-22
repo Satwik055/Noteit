@@ -76,6 +76,18 @@ class CreateNoteFragment : Fragment() {
             }
         })
 
+        //Chip Group
+        getDataFromCurrentBackstack<ArrayList<String>>("SELECTED_CHIP_TEXT")
+        /*
+        val tags = getDataFromCurrentBackstack<ArrayList<String>>("SELECTED_CHIP_TEXT")
+        if (tags != null) {
+            for (i in tags){
+                createNewChip(binding.chipGroup, i)
+            }
+        }
+
+         */
+
 
 
 
@@ -96,7 +108,6 @@ class CreateNoteFragment : Fragment() {
             val lastEditedDay = CalendarUtil.getCurrentDay()
             val lastEditedTime = CalendarUtil.getCurrentTime()
             val lastEditedMonth = CalendarUtil.getCurrentMonth()
-            //Converting list of tags to string because room doesn't support list data type
             val tags = getDataFromCurrentBackstack<ArrayList<String>>("SELECTED_CHIP_TEXT")
             val data = NotesEntity(null, title, content, lastEditedDate, lastEditedDay, lastEditedTime, lastEditedMonth, tags)
             mainViewModel.insertNotes(data)
@@ -110,6 +121,7 @@ class CreateNoteFragment : Fragment() {
         KeyboardUtil.showSoftKeyboard(binding.editTextHeading)
     }
 
+
     /**
      * Returns data (if any) of type T from the current backstack using the specified key
      * @param key
@@ -121,5 +133,15 @@ class CreateNoteFragment : Fragment() {
         return findNavController().currentBackStackEntry?.savedStateHandle?.get<T>(key)
     }
 
+    private fun <T> sendDataToPreviousBackstack(key: String, data:T){
+        findNavController().previousBackStackEntry?.savedStateHandle?.set(key,data)
+    }
+    private fun createNewChip(chipGroup: ChipGroup, chipText:String ) {
+        val chip = Chip(context)
+        chip.id = View.generateViewId()
+        chip.text = chipText
+        chip.isCheckable = true
+        chipGroup.addView(chip)
+    }
 
 }

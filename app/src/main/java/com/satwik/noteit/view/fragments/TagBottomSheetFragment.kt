@@ -35,12 +35,12 @@ class TagBottomSheetFragment :BottomSheetDialogFragment() {
             }
         }
 
-        //Save tag button
+        //Save button
         binding.btnSaveTag.setOnClickListener {
             val selectedChipText = getSelectedChipText(binding.chipGroup)
-            if(selectedChipText.isNotEmpty()){
+            if(selectedChipText.isNotEmpty()) {
                 sendDataToPreviousBackstack("SELECTED_CHIP_TEXT", selectedChipText)
-                }
+            }
             findNavController().popBackStack()
         }
 
