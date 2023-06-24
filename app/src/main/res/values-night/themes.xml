@@ -12,6 +12,8 @@
         <item name="colorSecondary">@color/mirage</item>
         <item name="colorOnSecondary">@color/monsoon</item>
         <item name="colorSecondaryVariant">@color/batlicSea</item>
+        <item name="colorOnPrimarySurface">@color/white</item>
+        <item name="colorSurfaceContainer">@color/mirage</item>
 
         <!--================Theme customization=================-->
 

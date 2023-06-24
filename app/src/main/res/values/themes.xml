@@ -10,10 +10,14 @@
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorAccent">@color/ultramarineBlue</item>
 
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/white</item>
         <item name="colorSecondaryVariant">@color/seashell</item>
         <item name="colorOnSecondary">@color/monsoon</item>
+        <item name="colorOnPrimarySurface">@color/white</item>
+        <item name="colorSurfaceContainer">@color/seashell</item>
+
 
         <!--================Theme customization=================-->
 
@@ -33,6 +37,8 @@
         <!-- Text Color -->
         <item name="android:textColor">?colorOnPrimary</item>
 
-
     </style>
+
+
+
 </resources>
