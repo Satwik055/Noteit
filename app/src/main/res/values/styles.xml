@@ -11,4 +11,11 @@
         <item name="android:src">@drawable/ic_btn_menu</item>
     </style>
 
+    <!--Button-->
+    <style name="Widget.NoteIt.Button" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">?colorOnPrimarySurface</item>
+        <item name="android:backgroundTint">?colorAccent</item>
+    </style>
+
 </resources>
