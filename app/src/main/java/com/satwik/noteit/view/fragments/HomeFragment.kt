@@ -77,7 +77,6 @@ class HomeFragment : Fragment() {
         binding.editTextSearch.setOnClickListener {
             if(binding.editTextSearch.isFocused){
                 binding.editTextSearch.clearFocus()
-                KeyboardUtil.hideSoftKeyboard(binding.editTextSearch)
             }
         }
 
