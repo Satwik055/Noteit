@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
         <item name="android:popupBackground">@color/ultramarineBlue</item>
@@ -16,6 +16,29 @@
         <item name="android:fontFamily">@font/manrope</item>
         <item name="android:textColor">?colorOnPrimarySurface</item>
         <item name="android:backgroundTint">?colorAccent</item>
+    </style>
+
+    <!--EditText-->
+    <style name="Widget.Noteit.EditText.Heading" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+        <item name="android:hint">@string/hint_editTextHeading</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">35sp</item>
+        <item name="maxLines">1</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+    </style>
+
+    <style name="Widget.Noteit.EditText.Note" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="android:hint">@string/hint_editTextNote</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+
     </style>
 
 </resources>

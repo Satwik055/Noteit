@@ -8,16 +8,13 @@
 
     <TextView
         android:id="@+id/editText_content"
+        style="@style/Widget.Noteit.EditText.Note"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/transparent"
-        android:fontFamily="@font/manrope_medium"
-        android:gravity="start"
         android:text="@string/placeholderText_editText_content"
-        android:textSize="@dimen/note_content"
         android:layout_marginTop="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,17 +22,14 @@
         app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
 
     <TextView
+        style="@style/Widget.Noteit.EditText.Heading"
         android:id="@+id/editText_heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/transparent"
-        android:fontFamily="@font/manrope_semibold"
         android:text="@string/placeholderText_editText_heading"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/note_heading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

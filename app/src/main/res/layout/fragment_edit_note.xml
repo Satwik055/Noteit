@@ -9,18 +9,14 @@
 
     <EditText
         android:id="@+id/editText_content"
+        style="@style/Widget.Noteit.EditText.Note"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="49dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/transparent"
-        android:fontFamily="@font/manrope_medium"
-        android:gravity="start"
         android:text="@string/placeholderText_editText_content"
-        android:textCursorDrawable="@drawable/custom_cursor"
-        android:textSize="@dimen/note_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,20 +26,16 @@
 
     <EditText
         android:id="@+id/editText_heading"
+        style="@style/Widget.Noteit.EditText.Heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/transparent"
-        android:fontFamily="@font/manrope_semibold"
         android:text="@string/placeholderText_editText_heading"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/note_heading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textCursorDrawable="@drawable/custom_cursor"
         android:importantForAutofill="no"
         tools:ignore="LabelFor,TextFields"/>
 
@@ -77,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_medium"
-            android:text="@string/placeholderText_textView_counter"
+            android:text="@string/placeholderText_textView_dateAndTime"
             android:textColor="?colorOnSecondary"
             android:gravity="start"
             android:textSize="15sp" />
@@ -87,10 +79,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_medium"
-            android:text="@string/placeholderText_textView_dateAndTime"
+            android:text="@string/placeholderText_textView_counter"
             android:gravity="start"
             android:textColor="?colorOnSecondary"
             android:textSize="15sp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
