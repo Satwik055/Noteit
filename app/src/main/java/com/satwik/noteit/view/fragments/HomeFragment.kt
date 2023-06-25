@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentHomeBinding
 import com.satwik.noteit.model.NotesEntity
-import com.satwik.noteit.utils.KeyboardUtil
 import com.satwik.noteit.view.adapter.MyNotesAdapter
 import com.satwik.noteit.viewmodel.MainViewModel
 
@@ -73,13 +72,6 @@ class HomeFragment : Fragment() {
             }
         })
 
-        //Handling searchbar focus
-        binding.editTextSearch.setOnClickListener {
-            if(binding.editTextSearch.isFocused){
-                binding.editTextSearch.clearFocus()
-            }
-        }
-
 
 
         return binding.root
@@ -94,8 +86,6 @@ class HomeFragment : Fragment() {
         }
         adapter.filtering(newFilteredList)
     }
-
-
 
 
 
