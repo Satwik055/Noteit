@@ -72,6 +72,13 @@ class HomeFragment : Fragment() {
             }
         })
 
+        // Handling searchbar focus
+        binding.editTextSearch.setOnClickListener {
+            if(it.isFocused){
+                it.clearFocus()
+            }
+        }
+
 
 
         return binding.root
