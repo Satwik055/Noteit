@@ -1,16 +1,13 @@
 package com.satwik.noteit.service
 
-import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.os.Build
 import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.satwik.noteit.R
 
-class MyFirebaseMessagingService: FirebaseMessagingService() {
-
+class PushMessagingService: FirebaseMessagingService() {
     companion object {
         private const val CHANNEL_ID = "MyChannelId"
     }
@@ -18,23 +15,23 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        val title = message.notification?.title
-        val text = message.notification?.body
+        generateNotification(message.notification!!.title!!, message.notification!!.body!!)
 
+    }
+
+
+    //Notification will only works for android version >= Oreo
+    private fun generateNotification(title:String, text:String){
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         val notificationBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_stat_ic_notification)
             .setContentTitle(title)
             .setContentText(text)
             .setAutoCancel(true)
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(CHANNEL_ID, "Push Notification Channel", NotificationManager.IMPORTANCE_HIGH)
-            notificationManager.createNotificationChannel(channel)
-        }
+            .setOnlyAlertOnce(true)
+            .setVibrate(longArrayOf(1000, 1000, 1000, 1000))
 
         notificationManager.notify(0, notificationBuilder.build())
-
-
     }
 }
