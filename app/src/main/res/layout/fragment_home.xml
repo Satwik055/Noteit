@@ -50,26 +50,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
+        tools:ignore="LabelFor,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
+        style="@style/Widget.NoteIt.FloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="38dp"
-        android:background="@color/white"
-        android:backgroundTint="?colorPrimaryContainer"
-        app:borderWidth="0dp"
-        app:elevation="5dp"
-        app:fabCustomSize="65dp"
         app:layout_anchorGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:maxImageSize="33dp"
-        app:srcCompat="@drawable/ic_fab_icon"
-        app:tint="?colorOnPrimaryContainer"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageView
