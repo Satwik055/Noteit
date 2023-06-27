@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bottomsheet_bg"
+    android:background="@drawable/dialog_bg"
     android:padding="20dp">
 
     <!--Action buttons-->
@@ -15,6 +15,7 @@
         android:layout_height="22dp"
         android:fontFamily="@font/manrope_bold"
         android:text="Title"
+        android:textColor="?colorOnSurface"
         android:textAlignment="viewStart"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +29,7 @@
         android:layout_marginTop="26dp"
         android:fontFamily="@font/manrope"
         android:text="Message"
+        android:textColor="?colorOnSurfaceVariant"
         android:textAlignment="viewStart"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,13 +52,13 @@
     <Button
         android:id="@+id/btnNegative"
         style="@style/Widget.NoteIt.Button"
-        android:backgroundTint="?colorSurfaceContainer"
+        android:backgroundTint="?colorPrimaryVariant"
         android:layout_width="130dp"
         android:layout_height="48dp"
         android:layout_gravity="end"
         android:layout_marginStart="33dp"
         android:layout_marginTop="26dp"
-        android:textColor="?colorOnPrimary"
+        android:textColor="?colorOnPrimaryFixedVariant"
         android:text="Negative"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPositive"

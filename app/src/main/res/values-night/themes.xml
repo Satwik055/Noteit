@@ -3,36 +3,34 @@
     <!-- Base application theme. -->
     <style name="Theme.NoteIt" parent="Theme.Material3.Dark.NoActionBar">
 
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/cinder</item>
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/ultramarineBlue</item>
+        <item name="colorPrimaryVariant">@color/batlicSea</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorAccent">@color/ultramarineBlue</item>
+        <item name="colorOnPrimaryFixedVariant">@color/monsoon</item>
+        <item name="colorPrimaryContainer">@color/ultramarineBlue</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
 
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/mirage</item>
-        <item name="colorOnSecondary">@color/monsoon</item>
-        <item name="colorSecondaryVariant">@color/batlicSea</item>
-        <item name="colorOnPrimarySurface">@color/white</item>
-        <item name="colorSurfaceContainer">@color/mirage</item>
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/cinder</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/monsoon</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+        <item name="colorSurfaceContainer">@color/cinder</item>
+        <item name="colorSurfaceContainerLow">@color/mirage</item>
+        <item name="colorSurfaceContainerHigh">@color/cinder</item>
+        <item name="colorSurfaceContainerHighest">@color/batlicSea</item>
 
         <!--================Theme customization=================-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >?colorPrimary</item>
+        <item name="android:statusBarColor" >?colorSurface</item>
 
         <!-- Window & Toolbar Background color -->
-        <item name="android:windowBackground">?colorPrimary</item>
-
-        <!-- Text Color -->
-        <item name="android:textColor">?colorOnPrimary</item>
-
-        <!-- Text color hint -->
-        <item name="android:textColorHint">?colorOnSecondary</item>
+        <item name="android:windowBackground">?colorSurface</item>
 
         <!-- Icon color -->
-        <item name="colorControlNormal">@color/white</item>
-
-
+        <item name="colorControlNormal">?colorOnSurface</item>
 
     </style>
 </resources>

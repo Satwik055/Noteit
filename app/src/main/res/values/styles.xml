@@ -15,29 +15,59 @@
     <style name="Widget.NoteIt.Button" parent="Widget.Material3.Button">
         <item name="android:fontFamily">@font/manrope</item>
         <item name="android:textColor">?colorOnPrimarySurface</item>
-        <item name="android:backgroundTint">?colorAccent</item>
+        <item name="android:backgroundTint">?colorPrimary</item>
     </style>
 
-    <!--EditText-->
+    <!--EditText heading-->
     <style name="Widget.Noteit.EditText.Heading" parent="Widget.AppCompat.EditText">
         <item name="android:background">@color/transparent</item>
         <item name="android:fontFamily">@font/manrope_semibold</item>
         <item name="android:hint">@string/hint_editTextHeading</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textSize">35sp</item>
+        <item name="android:textColor">?colorOnSurface</item>
         <item name="maxLines">1</item>
         <item name="android:maxLength">50</item>
+        <item name="android:textColorHint">?colorOnSurfaceVariant</item>
         <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
     </style>
 
+    <!--EditText note-->
     <style name="Widget.Noteit.EditText.Note" parent="Widget.AppCompat.EditText">
         <item name="android:background">@color/transparent</item>
         <item name="android:fontFamily">@font/manrope_medium</item>
         <item name="android:hint">@string/hint_editTextNote</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textSize">17sp</item>
+        <item name="android:textColor">?colorOnSurface</item>
         <item name="android:gravity">start</item>
+        <item name="android:textColorHint">?colorOnSurfaceVariant</item>
         <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+    </style>
+
+    <!--Searchbar-->
+    <style name="Widget.NoteIt.Searchbar" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/searchbar_bg</item>
+        <item name="android:drawableStart">@drawable/ic_searchbar_icon</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:hint">@string/hint_searchBar</item>
+        <item name="android:textColorHint">?colorOnSurfaceVariant</item>
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--Card-->
+    <style name="Widget.NoteIt.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cornerRadius">16dp</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="cardElevation">10dp</item>
+        <item name="cardBackgroundColor">?colorSurfaceContainerLow</item>
+        <item name="contentPadding">13dp</item>
 
     </style>
 

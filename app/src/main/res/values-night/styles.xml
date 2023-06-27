@@ -15,7 +15,7 @@
     <style name="Widget.NoteIt.Button" parent="Widget.Material3.Button">
         <item name="android:fontFamily">@font/manrope</item>
         <item name="android:textColor">?colorOnPrimarySurface</item>
-        <item name="android:backgroundTint">?colorAccent</item>
+        <item name="android:backgroundTint">?colorPrimary</item>
     </style>
 
 </resources>
