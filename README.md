@@ -36,7 +36,7 @@ Contributions to the Android Notes App are welcome! If you would like to contrib
 4. Submit a pull request explaining the changes you have made.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [GPL-3.0](LICENSE).
 
 ## Contact
 If you have any questions, suggestions, or issues, please feel free to contact the project maintainer at [satwikkumar055@gmail.com](mailto:satwikkumar055@gmail.com).
