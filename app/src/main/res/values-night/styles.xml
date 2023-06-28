@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:popupBackground">@color/cinder</item>
-        <item name="fontFamily">@font/manrope</item>
-        <item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>
-    </style>
-
-    <style name="CustomOverflowButton" >
-        <item name="android:src">@drawable/ic_btn_menu</item>
-    </style>
-
-    <!--Button-->
-    <style name="Widget.NoteIt.Button" parent="Widget.Material3.Button">
-        <item name="android:fontFamily">@font/manrope</item>
-        <item name="android:textColor">?colorOnPrimarySurface</item>
-        <item name="android:backgroundTint">?colorAccent</item>
-    </style>
-
 </resources>

@@ -2,16 +2,13 @@
 
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget.Material3.CardView.Elevated"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.NoteIt.CardView"
     android:layout_width="match_parent"
+    app:cardBackgroundColor="?colorSurfaceContainerLow"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:backgroundTint="?colorSecondary"
-    app:cardElevation="10dp"
-    app:cardCornerRadius="16dp"
-    app:contentPadding="13dp">
+    android:layout_margin="8dp">
 
     <TextView
         android:id="@+id/largeCard_title"
@@ -20,6 +17,7 @@
         android:layout_gravity="start"
         android:fontFamily="@font/manrope_bold"
         android:text="Title"
+        android:textColor="?colorOnSurface"
         android:ellipsize="end"
         android:maxLines="1"
         android:textSize="16sp"
@@ -36,7 +34,7 @@
         android:maxLines="9"
         android:fontFamily="@font/manrope_light"
         android:text="Content"
-        android:textColor="?colorOnSecondary"
+        android:textColor="?colorOnSurfaceVariant"
         android:textSize="13sp"
         tools:ignore="HardcodedText" />
 
@@ -48,7 +46,7 @@
         android:layout_gravity="bottom|start"
         android:backgroundTint="@color/secondary_greyblue"
         app:cardCornerRadius="5dp"
-        app:strokeColor="@color/white50"
+        app:strokeColor="?colorOnSurfaceVariant"
         app:strokeWidth="0.6dp">
 
         <TextView
@@ -58,7 +56,7 @@
             android:layout_margin="5dp"
             android:fontFamily="@font/manrope"
             android:text="None"
-            android:textColor="@color/white50"
+            android:textColor="?colorOnSurfaceVariant"
             android:textSize="10dp" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -73,7 +71,7 @@
         android:fontFamily="@font/manrope"
         android:gravity="bottom"
         android:text="6 Dec"
-        android:textColor="?colorOnSecondary"
+        android:textColor="?colorOnSurfaceVariant"
         android:textSize="10sp"
         tools:ignore="HardcodedText,SmallSp"/>
 
