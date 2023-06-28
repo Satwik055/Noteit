@@ -1,11 +1,19 @@
+<div align="center">
+<img src="https://github.com/Satwik055/Noteit/assets/98459250/ea7e5cc5-cd25-4d41-baf8-666e0fbea416" width="20%" height="20%"></img>
 
-![Frame 1 (2) (1)](https://github.com/Satwik055/Noteit/assets/98459250/b4dc48fb-7842-4690-abe7-1de1644fdc27)
-
-
-# Noteit
+# NoteIt
+Life is too fast, don't forget anything - just noteit !
+</div>
 
 ## Description
 Noteit is a simple and intuitive application that allows users to create, manage, and organize their notes on their Android devices. Whether you need to jot down ideas, make to-do lists, or keep track of important information, this app provides a convenient and efficient way to do so.
+
+## Features
+- Note Creation and Editing
+- Search and Filters
+- Offline Access
+- Dark Mode
+- Voice-to-Text Conversion
 
 ## Screenshots
 <p align="center">
@@ -18,9 +26,7 @@ Noteit is a simple and intuitive application that allows users to create, manage
 </p>
 
 ## Requirements
-- Android device or emulator running Android OS version 5.0 (Lollipop) or above.![Uploading Frame 1.png…]()
-
-- Android Studio version 4.0 or above.
+- Android device or emulator running Android OS version 5.0 (Lollipop) or above.
 
 ## Contributing
 Contributions to the Android Notes App are welcome! If you would like to contribute, please follow these steps:
@@ -35,4 +41,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 If you have any questions, suggestions, or issues, please feel free to contact the project maintainer at [satwikkumar055@gmail.com](mailto:satwikkumar055@gmail.com).
 
-Enjoy taking notes with the Noteit App!
+Enjoy taking notes with the NoteIt App!
