@@ -1,23 +1,36 @@
 <resources>
+
     <!-- Base application theme. -->
     <style name="Theme.NoteIt" parent="Theme.Material3.Dark.NoActionBar">
 
-        <!-- Primary brand color. -->
+        <!-- Primary colors -->
         <item name="colorPrimary">@color/ultramarineBlue</item>
-        <item name="colorPrimaryVariant">@color/white50</item>
+        <item name="colorPrimaryVariant">@color/batlicSea</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimaryFixedVariant">@color/monsoon</item>
+        <item name="colorPrimaryContainer">@color/ultramarineBlue</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
 
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/ultramarineBlue</item>
-        <item name="colorSecondaryVariant">@color/ultramarineBlue</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/cinder</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/monsoon</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+        <item name="colorSurfaceContainer">@color/cinder</item>
+        <item name="colorSurfaceContainerLow">@color/mirage</item>
+        <item name="colorSurfaceContainerHigh">@color/cinder</item>
+        <item name="colorSurfaceContainerHighest">@color/batlicSea</item>
+
+        <!--================Theme customization=================-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >@color/cinder</item>
+        <item name="android:statusBarColor" >?colorSurface</item>
 
         <!-- Window & Toolbar Background color -->
-        <item name="android:windowBackground">@color/cinder</item>
+        <item name="android:windowBackground">?colorSurface</item>
 
+        <!-- Icon color -->
+        <item name="colorControlNormal">?colorOnSurface</item>
 
     </style>
 </resources>

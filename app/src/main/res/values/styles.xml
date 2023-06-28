@@ -1,21 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="fragmentTitle">
-        <item name="android:textSize">34sp</item>
-        <item name="fontFamily">@font/manrope</item>
-        <item name="android:textAlignment">viewStart</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:popupBackground">@color/cinder</item>
-        <item name="android:textColor">@color/white</item>
+    <!--Menu-->
+    <style name="Widget.Noteit.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/dialog_bg</item>
         <item name="fontFamily">@font/manrope</item>
-        <item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowMenuButton</item>
     </style>
-
-    <style name="CustomOverflowButton" >
+    <style name="OverflowMenuButton" >
         <item name="android:src">@drawable/ic_btn_menu</item>
-
     </style>
+
+    <!--Button-->
+    <style name="Widget.NoteIt.Button" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">?colorOnPrimarySurface</item>
+        <item name="android:backgroundTint">?colorPrimary</item>
+    </style>
+
+    <!--EditText heading-->
+    <style name="Widget.Noteit.EditText.Heading" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+        <item name="android:hint">@string/hint_editTextHeading</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="maxLines">1</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:textColorHint">?colorOnSurfaceVariant</item>
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+    </style>
+
+    <!--EditText note-->
+    <style name="Widget.Noteit.EditText.Note" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="android:hint">@string/hint_editTextNote</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColorHint">?colorOnSurfaceVariant</item>
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+    </style>
+
+    <!--Searchbar-->
+    <style name="Widget.NoteIt.Searchbar" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/searchbar_bg</item>
+        <item name="android:drawableStart">@drawable/ic_searchbar_icon</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:hint">@string/hint_searchBar</item>
+        <item name="android:textColorHint">?colorOnSurfaceVariant</item>
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--Card-->
+    <style name="Widget.NoteIt.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cornerRadius">16dp</item>
+        <item name="cardElevation">10dp</item>
+        <item name="contentPadding">13dp</item>
+    </style>
+
+    <!--FAB-->
+    <style name="Widget.NoteIt.FloatingActionButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">?colorPrimaryContainer</item>
+        <item name="tint">?colorOnPrimaryContainer</item>
+        <item name="borderWidth">0dp</item>
+        <item name="fabCustomSize">65dp</item>
+        <item name="elevation">5dp</item>
+        <item name="maxImageSize">33dp</item>
+        <item name="srcCompat">@drawable/ic_fab_icon</item>
+    </style>
+
 </resources>

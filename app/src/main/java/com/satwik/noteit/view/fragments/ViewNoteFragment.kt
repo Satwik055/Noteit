@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.satwik.noteit.R
 import com.satwik.noteit.databinding.FragmentViewNoteBinding
+import com.satwik.noteit.view.custom.NoteitAlertDialog
 import com.satwik.noteit.viewmodel.MainViewModel
 
 class ViewNoteFragment : Fragment() {
@@ -54,7 +53,7 @@ class ViewNoteFragment : Fragment() {
 
                 //Delete Button (in overflow menu)
                 R.id.menu_options_delete->{
-                    openBottomSheetDialog()
+                    showAlertDialog()
                     true
                 }
 
@@ -66,8 +65,8 @@ class ViewNoteFragment : Fragment() {
         //Navigation Button (Back Button)
         binding.toolbar.setNavigationOnClickListener {
             findNavController().popBackStack()
-
         }
+
 //----------------------------------------------------------------------------------------------------//
 
         //Character counter
@@ -75,29 +74,20 @@ class ViewNoteFragment : Fragment() {
 
 
 
-
         return binding.root
     }
 
-    private fun openBottomSheetDialog() {
-        val dialog = BottomSheetDialog(requireContext())
-        dialog.setContentView(R.layout.fragment_bottom_sheet)
+    private fun showAlertDialog() {
+        val dialog = NoteitAlertDialog(requireContext())
+        dialog.setTitle("Delete note ?")
+        dialog.setMessage("Notes once deleted cant be recovered")
+        dialog.setPositiveButton("Confirm", View.OnClickListener {
+            mainViewModel.deleteNotes(notes.data.id!!)
+            findNavController().popBackStack()
+        })
+        dialog.setNegativeButton("Cancel", null)
         dialog.show()
 
-        val btnDelete = dialog.findViewById<Button>(R.id.btn_bottomfrag_delete)
-        val btnCancel = dialog.findViewById<Button>(R.id.btn_bottomfrag_cancel)
-
-        //Delete Button
-        btnDelete?.setOnClickListener {
-            mainViewModel.deleteNotes(notes.data.id!!)
-            dialog.hide()
-            findNavController().popBackStack()
-        }
-
-        //Cancel Button
-        btnCancel?.setOnClickListener {
-            dialog.hide()
-        }
     }
 
 }

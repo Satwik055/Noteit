@@ -19,7 +19,9 @@ abstract class NotesDatabase:RoomDatabase() {
                 synchronized(this){
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         NotesDatabase::class.java,
-                        "NotesDB").allowMainThreadQueries().build()
+                        "NotesDB").allowMainThreadQueries()
+                        .fallbackToDestructiveMigration()
+                        .build()
                 }
 
             }

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">NoteIt</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="bottomSheet_message">Want to delete this note ?</string>
+    <string name="label_deleteButton_bottomSheet">Delete</string>
+    <string name="label_cancelButton_bottomSheet">Cancel</string>
+    <string name="hint_editTextHeading">Heading</string>
+    <string name="hint_editTextNote">Enter your text here</string>
+    <string name="title_homeFragment">Notes</string>
+    <string name="hint_searchBar">Search your notes</string>
+    <string name="instruction_textView_instruction">Click on + to create note</string>
+    <string name="label_textView_counter">%1$s Characters</string>
+    <string name="label_textView_dateAndTime">%1$s, %2$s |&#160;</string>
+    <string name="label_card_dateAndMonth">%1$s %2$s</string>
+
+    <!-- Placeholder Texts (Doesn't affect final app) -->
+
+    <string name="placeholderText_textView_dateAndTime">Sun, 10:30 |</string>
+    <string name="placeholderText_textView_counter">0 Characters</string>
+    <string name="placeholderText_editText_content">This is dummy text, which can be edited by the user</string>
+    <string name="placeholderText_editText_heading">Edit this Title</string>
+
+</resources>

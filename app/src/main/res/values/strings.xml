@@ -5,6 +5,7 @@
     <string name="label_deleteButton_bottomSheet">Delete</string>
     <string name="label_cancelButton_bottomSheet">Cancel</string>
     <string name="hint_editTextHeading">Heading</string>
+    <string name="hint_editTextNote">Enter your text here</string>
     <string name="title_homeFragment">Notes</string>
     <string name="hint_searchBar">Search your notes</string>
     <string name="instruction_textView_instruction">Click on + to create note</string>
@@ -13,7 +14,7 @@
     <string name="label_card_dateAndMonth">%1$s %2$s</string>
 
     <!-- Placeholder Texts (Doesn't affect final app) -->
-    <string name="placeholderText_editTextContent">Enter your text here</string>
+
     <string name="placeholderText_textView_dateAndTime">Sun, 10:30 |</string>
     <string name="placeholderText_textView_counter">0 Characters</string>
     <string name="placeholderText_editText_content">This is dummy text, which can be edited by the user</string>

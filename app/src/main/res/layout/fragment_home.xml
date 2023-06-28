@@ -12,10 +12,9 @@
         android:id="@+id/myNotesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:fadingEdge="vertical"
+        android:layout_margin="8dp"
         android:fadingEdgeLength="10dp"
-        android:paddingStart="16dp"
         android:requiresFadingEdge="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,56 +26,43 @@
 
     <TextView
         android:id="@+id/textView"
-        style="@style/fragmentTitle"
+        android:textSize="34sp"
+        android:fontFamily="@font/manrope"
+        android:textAlignment="viewStart"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/title_homeFragment"
+        android:textColor="?colorOnSurface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextSearch"
+        style="@style/Widget.NoteIt.Searchbar"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/searchbar_bg"
-        android:drawableStart="@drawable/ic_searchbar_icon"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="@font/manrope"
-        android:hint="@string/hint_searchBar"
         android:importantForAutofill="no"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textCursorDrawable="@drawable/custom_cursor"
-        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
+        tools:ignore="LabelFor,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
+        style="@style/Widget.NoteIt.FloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="38dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/ultramarineBlue"
-        app:borderWidth="0dp"
-        app:elevation="15dp"
-        app:fabCustomSize="65dp"
         app:layout_anchorGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:maxImageSize="33dp"
-        app:srcCompat="@drawable/ic_fab_icon"
-        app:tint="@color/white"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageView
@@ -102,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="272dp"
         android:fontFamily="@font/manrope"
+        android:textColor="?colorOnSurface"
         android:text="@string/instruction_textView_instruction"
         android:textSize="17sp"
         android:visibility="invisible"
