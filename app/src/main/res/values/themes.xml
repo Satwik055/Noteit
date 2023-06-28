@@ -18,7 +18,7 @@
         <item name="colorOnSurfaceVariant">@color/monsoon</item>
         <item name="colorOnSecondaryContainer">@color/white</item>
         <item name="colorSurfaceContainer">@color/white</item>
-        <item name="colorSurfaceContainerLow">@color/white</item>
+        <item name="colorSurfaceContainerLow">@color/snow</item>
         <item name="colorSurfaceContainerHigh">@color/white</item>
         <item name="colorSurfaceContainerHighest">@color/seashell</item>
 

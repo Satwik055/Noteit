@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:popupBackground">@color/ultramarineBlue</item>
+    <!--Menu-->
+    <style name="Widget.Noteit.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/dialog_bg</item>
         <item name="fontFamily">@font/manrope</item>
-        <item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowMenuButton</item>
     </style>
-
-    <style name="CustomOverflowButton" >
+    <style name="OverflowMenuButton" >
         <item name="android:src">@drawable/ic_btn_menu</item>
     </style>
 
@@ -64,9 +64,7 @@
     <!--Card-->
     <style name="Widget.NoteIt.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cornerRadius">16dp</item>
-        <item name="colorSurface">@color/white</item>
         <item name="cardElevation">10dp</item>
-        <item name="cardBackgroundColor">?colorSurfaceContainerLow</item>
         <item name="contentPadding">13dp</item>
     </style>
 

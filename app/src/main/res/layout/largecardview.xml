@@ -3,8 +3,10 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.NoteIt.CardView"
     android:layout_width="match_parent"
+    app:cardBackgroundColor="?colorSurfaceContainerLow"
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
