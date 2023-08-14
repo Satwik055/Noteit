@@ -6,7 +6,7 @@ import androidx.room.*
 @Dao
 interface NotesDao {
 
-    @Query("SELECT * FROM Notes")
+    @Query("SELECT * FROM Notes ORDER BY notes_id DESC")
     fun getNote(): LiveData<List<NotesEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
