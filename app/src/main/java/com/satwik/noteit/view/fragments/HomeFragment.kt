@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -87,11 +88,17 @@ class HomeFragment : Fragment() {
     private fun notesFiltering(s:CharSequence?) {
         val newFilteredList = arrayListOf<NotesEntity>()
         for (i in oldMyNotes){
-            if(i.title.contains(s.toString()) || i.content.contains(s.toString())) {
+            if(i.title.lowercase().contains(s.toString()) || i.content.lowercase().contains(s.toString())) {
                 newFilteredList.add(i)
             }
         }
-        adapter.filtering(newFilteredList)
+        if (newFilteredList.isEmpty()) {
+            // if no item is added in filtered list we are
+            // displaying a toast message as no data found.
+            Toast.makeText(requireActivity(), "No Data Found..", Toast.LENGTH_SHORT).show()
+        } else {
+            adapter.filtering(newFilteredList)
+        }
     }
 
 
